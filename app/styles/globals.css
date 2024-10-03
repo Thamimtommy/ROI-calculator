@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 33, 37, 41; /* Dark gray for text (almost black) */
+  --background-start-rgb: 249, 250, 251; /* Light gray/white for the page background */
+  --background-end-rgb: 255, 255, 255; /* Pure white */
+  --primary-blue: 37, 99, 235; /* Updated to a richer blue */
+  --secondary-blue: 59, 130, 246; /* Lighter blue for hover effects */
+  --accent-indigo: 79, 70, 229; /* Indigo for accents */
+  --secondary-gray: 243, 244, 246; /* Very light gray for subtle backgrounds */
+  --border-gray: 209, 213, 219; /* Light gray for borders */
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  color: rgb(var(--foreground-rgb));
+}
+
+.btn {
+  @apply px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg;
+}
+
+.btn-primary {
+  background-color: rgb(var(--primary-blue));
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--secondary-blue));
+}
+
+.btn-secondary {
+  background-color: white;
+  color: rgb(var(--primary-blue));
+  border: 1px solid rgb(var(--primary-blue));
+}
+
+.btn-secondary:hover {
+  background-color: rgb(var(--secondary-gray));
+}
+
+input {
+  @apply border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-md shadow-sm;
+}
+
+.container {
+  @apply mx-auto px-4;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, rgb(var(--primary-blue)), rgb(var(--accent-indigo)));
+}
